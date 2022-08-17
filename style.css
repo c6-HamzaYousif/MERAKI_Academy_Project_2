@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* body{
+    height: 1000px;
+    position: relative;
+} */
+.container{
+    display: flex;
+    height: 40px;
+    border: 2px solid black;
+    align-items: center;
+}
+    
+
+.nav{
+    width: 12.5%;
+    text-align: center;
+    
+}
+.navb{
+    width: 37.5%;
+    text-align: center;
+}
+.big{
+    margin-top: 100px;
+
+}
+.gallery{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    /* flex-direction: row; */
+
+}
+
+.house{
+    width: 100%;
+    height: 300px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.movie{
+    width: 20%;
+    height: 100%;
+    border: 1px solid black;
+
+}
+.movie-image{
+    height: 80%;
+}
+
+.a0{
+    background: url(./junior.jpg) no-repeat center center/ contain;
+}
+.a1{
+    background: url(./junior.jpg) no-repeat center center/ contain;
+}
+.a2{
+    background: url(./junior.jpg) no-repeat center center/ contain;
+}
+.a3{
+    background: url(./junior.jpg) no-repeat center center/ contain;
+}
+.a4{
+    background: url(./junior.jpg) no-repeat center center/ contain;
+}
