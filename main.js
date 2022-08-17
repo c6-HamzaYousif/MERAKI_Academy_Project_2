@@ -17,23 +17,15 @@ signIn.html("<h2>Sign In</h2>")
 const fqa = $(".fqa")
 fqa .html("<h2><span>F</span><span>Q</span><span>A</span></h2>")
 
-const big = $('<div class="big"><h1>Recently added</h1></div>')
+const big = $('<div class="big"><h1 class="genre">Recently added</h1></div>')
 body.append(big)
 
 const house = $('<div class="house"></div>')
 big.append(house)
 
+const recFeat = [{movie: "Day shift"}, {movie: "The hating game"}, {movie: "Carter"}, {movie: "Thirteen lives"}, {movie: "Morbius"}]
 for(let i=0; i<5; i++){
-    let x = $(`<div class="movie"><div class="movie-image a${i}"></div><h4 class="movie-name"></h4></div>`)
+    let x = $(`<div class="movie"><div class="movie-image a${i}"></div><h2 class="movie-name ">${recFeat[i].movie}</h2></div>`)
     house.append(x)
 }
 
-const recFeat = [{movie: "karkar"}, {movie: "katkoot"}, {movie: "boo7a"}, {movie: "lembi"}, {movie: "8 gega"}]
-
-const movieName = $(".movie-name")
-
-for(let i=0; i<recFeat.length;i++){
-    movieName[i].text(`${recFeat[i].movie}`)
-}
-
-const test = $('<h2 class="test"></h2>')

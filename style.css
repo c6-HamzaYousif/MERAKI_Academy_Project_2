@@ -52,20 +52,30 @@
 }
 .movie-image{
     height: 80%;
+    margin-top: 10px;
 }
 
 .a0{
-    background: url(./junior.jpg) no-repeat center center/ contain;
+    background: url(./dayShift.jpg) no-repeat center center/ contain;
 }
 .a1{
-    background: url(./junior.jpg) no-repeat center center/ contain;
+    background: url(./The-Hating-Game.jpg) no-repeat center center/ contain;
 }
 .a2{
-    background: url(./junior.jpg) no-repeat center center/ contain;
+    background: url(./carter.jpg) no-repeat center center/ contain;
 }
 .a3{
-    background: url(./junior.jpg) no-repeat center center/ contain;
+    background: url(./thirteen\ lives.jpg) no-repeat center center/ contain;
 }
 .a4{
-    background: url(./junior.jpg) no-repeat center center/ contain;
+    background: url(./Morbius_\(film\)_poster.jpg) no-repeat center center/ contain;
+}
+
+.movie-name{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.genre{
+    margin-left: 20px;
 }
