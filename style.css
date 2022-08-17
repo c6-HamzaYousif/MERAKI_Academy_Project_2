@@ -3,10 +3,10 @@
     margin: 0;
 }
 
-/* body{
-    height: 1000px;
-    position: relative;
-} */
+body{
+    background-color: rgb(199, 199, 216);
+ 
+}
 .container{
     display: flex;
     height: 40px;
@@ -78,7 +78,6 @@
 
 .genre{
     margin-left: 20px;
-    /* background: url(./images */
 }
 
 .first-half{
@@ -87,6 +86,21 @@
 }
 .second-half{
     color: red;
+
+}
+
+.f{
+    color: gold;
+
+}
+
+.a{
+    color: magenta;
+
+}
+
+.q{
+    color: teal;
 
 }
 
