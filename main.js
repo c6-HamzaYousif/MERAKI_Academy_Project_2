@@ -37,6 +37,31 @@ watchList.on("click",function(){
 
 const signIn = $(".sign-in")
 signIn.html("<h2>Sign In</h2>")
+signIn.on("click", function(){
+    body.html('<div class = "sign-in-page"></div>')
+    const signInPage = $(".sign-in-page")
+    for(let i=0; i<4; i++){
+        let signField = $(`<div class="sign-in-input"></div>`)
+        signInPage.append(signField)
+        let fields
+        if(i===0){
+            console.log(i)
+             fields = $('<label>First Name:<input type="text" placeholder="John, Jane..etc"/></label>')
+        }else if(i===1){
+            console.log(i)
+             fields = $('<label>Last Name:<input type="text" placeholder="Doe, Smith..etc"/></label>')
+        }else if(i===2){
+            console.log(i)
+             fields = $('<label>Email:<input type="email" placeholder="ex: JohnDoe@Gmail.com"/></label>')
+        }else{
+            console.log(i)
+             fields = $('<label>Password:<input type="password" placeholder="enter the password"/></label>')
+        }
+        signField.append(fields)
+    }
+    const signInButton = $('<button class=sing-in-btn>Sign In</button>')
+    signInPage.append(signInButton)
+})
 
 const fqa = $(".fqa")
 fqa .html('<h2><span class="f">F</span><span class="a">A</span><span class="q">Q</span></h2>')
@@ -64,15 +89,12 @@ for(let i=j; i<j+5; i++){
     let y = $(`<div class="movie-image"></div>`)
     y.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
     let z = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
-    let butt = $(`<button class="watchlist">Add to watch list</button>`)
+    let butt = $(`<button class="watchlist-btn">Add to watch list</button>`)
 
     butt.one("click", function(){
         let newObj = {}
         let sibling = $(this).siblings()
-        console.log(sibling.text())
-        // body.html('<div class="watch-list"><h2>My watchList</h2></div>')
-        // let house = $('<div class="house"></div>')
-        // body.append(house)
+        $(this).css("background-color", "rgb(30, 173, 173)")
         
         for(let i=0; i<movieArray.length; i++){
             
@@ -84,16 +106,6 @@ for(let i=j; i<j+5; i++){
                 localStorage.setItem("movies", jsonOb)
                 const newww = localStorage.getItem("movies")
                 watchListArrayOfObjects = JSON.parse(newww)
-                // for(let j=0; j<watchListArray.length; j++){
-                //     let container = $(`<div class="movie"></div>`)
-                //     let movieImage = $(`<div class="movie-image"></div>`)
-                //     house.append(container)
-                //     container.append(movieImage)
-                //     movieImage.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
-                //     let movieName = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
-                //     container.append(movieName)
-
-                // }
                 
             }
         }
@@ -103,9 +115,6 @@ for(let i=j; i<j+5; i++){
     x.append(y)
     x.append(z)
     x.append(butt)
-
-    
-    
 }
 j+=5
 

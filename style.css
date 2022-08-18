@@ -47,10 +47,12 @@ body{
     width: 20%;
     height: 100%;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 
 }
 .movie-image{
-    height: 80%;
+    height: 75%;
     margin-top: 10px;
 }
 
@@ -58,6 +60,17 @@ body{
 .movie-name{
     text-align: center;
     margin-top: 10px;
+}
+.watchlist-btn{
+    padding: 2px;
+    background-color: aqua;
+    margin: auto;
+}
+.watchlist-btn:hover{
+    background-color: rgb(25, 206, 206);
+}
+.watchlist-btn:active{
+    background-color: rgb(30, 173, 173);
 }
 
 .genre{
