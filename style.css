@@ -17,8 +17,7 @@ body{
 
 .nav{
     width: 12.5%;
-    text-align: center;
-    
+    text-align: center;    
 }
 .navb{
     width: 37.5%;
@@ -128,5 +127,19 @@ body{
 .youtube:hover{
     color: red;
     /* color: black; */
+}
+
+.houseee{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+.text-area{
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
