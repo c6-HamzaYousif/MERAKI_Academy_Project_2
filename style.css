@@ -55,21 +55,6 @@ body{
     margin-top: 10px;
 }
 
-/* .a0{
-    background: url(./dayShift.jpg) no-repeat center center/ contain;
-}
-.a1{
-    background: url(./The-Hating-Game.jpg) no-repeat center center/ contain;
-}
-.a2{
-    background: url(./carter.jpg) no-repeat center center/ contain;
-}
-.a3{
-    background: url(./thirteen\ lives.jpg) no-repeat center center/ contain;
-}
-.a4{
-    background: url(./Morbius_\(film\)_poster.jpg) no-repeat center center/ contain;
-} */
 
 .movie-name{
     text-align: center;
@@ -102,5 +87,46 @@ body{
 .q{
     color: teal;
 
+}
+
+.foooter{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    border: 2px solid black;
+}
+
+.svg{
+    margin-left: 50px;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+}
+.youtube{
+    margin-left: 50px;
+    width: 50px;
+    height: 50px;
+    margin-top: 17px;
+}
+
+.foot-first{
+    margin-left: 50px;
+    display: flex;
+}
+.foot-text{
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.svg:hover{
+    color: rgb(72, 72, 221);
+    /* color: black; */
+}
+
+.youtube:hover{
+    color: red;
+    /* color: black; */
 }
 
