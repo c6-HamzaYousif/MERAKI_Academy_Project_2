@@ -8,8 +8,25 @@ logo.html('<h2><span class="first-half">Movie</span><span class="second-half">Gu
 const search = $(".search")
 search.html('<input type="text" placeholder="Search for a movie, actor, genre..etc"/>')
 
+let watchListArray = []
 const watchList = $(".watch")
 watchList.html("<h2>WatchList</h2>")
+watchList.on("click",function(){
+    console.log(watchListArray)
+    body.html('<div class="watch-list"><h2>My watchList</h2></div>')
+    let house = $('<div class="house"></div>')
+    body.append(house)
+    for(let j=0; j<watchListArray.length; j++){
+        let container = $(`<div class="movie"></div>`)
+        let movieImage = $(`<div class="movie-image"></div>`)
+        house.append(container)
+        container.append(movieImage)
+        movieImage.css("background", `url(./images${watchListArray[j].url}) no-repeat center center/ contain`)
+        let movieName = $(`<h2 class="movie-name ">${watchListArray[j].movie}</h2>`)
+        container.append(movieName)
+
+    }
+})
 
 const signIn = $(".sign-in")
 signIn.html("<h2>Sign In</h2>")
@@ -33,6 +50,7 @@ big.append(house)
 //     console.log(this)
 // }
 
+
 for(let i=j; i<j+5; i++){
   
     let x = $(`<div class="movie"></div>`)
@@ -41,23 +59,33 @@ for(let i=j; i<j+5; i++){
     let z = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
     let butt = $(`<button class="watchlist">Add to watch list</button>`)
 
-    butt.on("click", function(){
+    butt.one("click", function(){
+        let newObj = {}
         let sibling = $(this).siblings()
         console.log(sibling.text())
-        body.html('<div class="watch-list"><h2>My watchList</h2></div>')
-        let house = $('<div class="house"></div>')
-        let container = $(`<div class="movie"></div>`)
-        let movieImage = $(`<div class="movie-image"></div>`)
-        body.append(house)
-        house.append(container)
-        container.append(movieImage)
+        // body.html('<div class="watch-list"><h2>My watchList</h2></div>')
+        // let house = $('<div class="house"></div>')
+        // body.append(house)
+        
         for(let i=0; i<movieArray.length; i++){
+            
             if(sibling.text() === movieArray[i].movie){
-                movieImage.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
-                let movieName = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
-                container.append(movieName)
+                newObj.movie = movieArray[i].movie
+                newObj.url = movieArray[i].url
+                watchListArray.push(newObj)
+                // for(let j=0; j<watchListArray.length; j++){
+                //     let container = $(`<div class="movie"></div>`)
+                //     let movieImage = $(`<div class="movie-image"></div>`)
+                //     house.append(container)
+                //     container.append(movieImage)
+                //     movieImage.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
+                //     let movieName = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
+                //     container.append(movieName)
+
+                // }
+                
             }
-        }ذ
+        }
 
     })
     house.append(x)
