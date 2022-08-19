@@ -1,6 +1,6 @@
 const body = $("body")
 const dropList = $(".drop-list")
-dropList.html("<select><option>Comedy</option><option>Drama</option><option>Action</option><option>Romance</option><option>Horror</option></select>")
+dropList.html('<select><option value="none" selected disabled hidden>Pick a category</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Horror">Horror</option></select>')
 
 const logo = $(".logo")
 logo.html('<h2><span class="first-half">Movie</span><span class="second-half">Guide</span></h2>')
@@ -24,14 +24,21 @@ watchList.on("click",function(){
     let house = $('<div class="houseee"></div>')
     body.append(house)
     for(let j=0; j<watchListArrayOfObjects.length; j++){
-        let container = $(`<div class="movie"></div>`)
-        let movieImage = $(`<div class="movie-image"></div>`)
-        house.append(container)
-        container.append(movieImage)
-        movieImage.css("background", `url(./images${watchListArrayOfObjects[j].url}) no-repeat center center/ contain`)
-        let movieName = $(`<h2 class="movie-name ">${watchListArrayOfObjects[j].movie}</h2>`)
-        container.append(movieName)
-
+        let test =  $(`<div class="wtclist"><h2 class="wtclist-text">${watchListArrayOfObjects[j].movie}</h2><img class="wtclist-img" src="./images${watchListArrayOfObjects[j].url}"/><button class="remove">Remove from wathclist</button></div>`)
+        house.append(test)
+        const removeButtons = $(".remove")
+        removeButtons.on("click", function(){
+            console.log(this)
+            let x = $(this).parent()
+            let y = $(this).siblings()
+            // console.log(y.text())
+            for(let i=0; i<watchListArrayOfObjects.length; i++){
+                if(y.text() === watchListArrayOfObjects[i].movie){
+                    watchListArrayOfObjects.splice(i,1)
+                }
+            }
+            x.remove()
+        })
     }
 })
 
@@ -45,16 +52,13 @@ signIn.on("click", function(){
         signInPage.append(signField)
         let fields
         if(i===0){
-            console.log(i)
              fields = $('<label>First Name:<input type="text" placeholder="John, Jane..etc"/></label>')
         }else if(i===1){
-            console.log(i)
              fields = $('<label>Last Name:<input type="text" placeholder="Doe, Smith..etc"/></label>')
         }else if(i===2){
             console.log(i)
              fields = $('<label>Email:<input type="email" placeholder="ex: JohnDoe@Gmail.com"/></label>')
         }else{
-            console.log(i)
              fields = $('<label>Password:<input type="password" placeholder="enter the password"/></label>')
         }
         signField.append(fields)
@@ -67,12 +71,47 @@ const fqa = $(".fqa")
 fqa .html('<h2><span class="f">F</span><span class="a">A</span><span class="q">Q</span></h2>')
 
 
-const movieArray = [{movie: "Day shift", url: "/dayShift.jpg"}, {movie: "The hating game", url: "/The-Hating-Game.jpg"}, {movie: "Carter", url: "/carter.jpg"}, {movie: "Thirteen lives", url: "/picthirteen.jpg"}, {movie: "Morbius", url: "/morbius.jpg"}, {movie: "Deep water", url: "/deepwaterpic.jpg"}, {movie: "The man from Tornto", url: "/theManFrompic.jpg"},{movie: "The gray man", url: "/theGrayMan.jpg"}, {movie: "The lost city", url: "/theLostCity.jpg"}, {movie: "Senior year", url: "/seniorYear.jpg"} ,{movie: "Let's be cops", url: "/letsBeCops.jpg"},{movie: "The hangover", url: "/theHangover.jpg"},{movie: "I love you, man", url: "/iLoveYouMan.jpg"},{movie: "Due date", url: "/dueDate.jpg "},{movie: "Bad trip", url: "/badTrip.jpg"},{movie: "Persuasion", url: "/persuasionMovie.jpg"},{movie: "The Unforgivable", url: "/theUnforgiv.jpg"},{movie: "The Mauritanian", url: "/theMaurit.jpg"},{movie: "Through My Window", url: "/throughMyWi.png"},{movie: "Little Women", url: "/littleWomen.jpg"},{movie: "Interceptor", url: "/Interceptor.jpg"},{movie: "The Tomorrow War", url: "/theTomorow.jpg"},{movie: "The Lost City", url: "/theLostCity.jpg"},{movie: "Wrath of Man", url: "/wrathOfMan.jpg"},{movie: "The Contractor", url: "/theContract.jpg"},{movie: "The Age of Adaline", url: "/theAgeOf.jpg"},{movie: "The Shape Of Water", url: "/theShpe.jpg"},{movie: "The Bodyguard", url: "/theBodyguard.jpg"},{movie: "Never Let Me Go", url: "/neverLetMe.jpg"},{movie: "Focus", url: "/Focus.jpg"},{movie: "Scream", url: "/Scream.jpg"},{movie: "No One Gets Out Alive", url: "/noOne.png"},{movie: "Umma", url: "/Umma.jpg"},{movie: "The Nun", url: "/theNun.jpg"},{movie: "The Grudge", url: "/theGrudge.jpg"}]
-const type = [{type: "Recently added"}, {type: "Popular now"}, {type: "Comedy"}, {type: "Drama"},{type: "Action"},{type: "Romance"},{type: "Horror"}]
+const movieArray = [{movie: "Day shift", url: "/dayShift.jpg", trailer: "", Genre: "Fantasy", Strarring: "Jamie Fox - Dave Franco", BoxOffice: "$100 million", Duration: "1h 54m", Rating: 57, YearReleased: 2022, story: "A hardworking dad out to provide for his daughter uses a boring pool-cleaning job as a front for his real gig: hunting and killing vampires."},
+     {movie: "The hating game", url: "/The-Hating-Game.jpg", trailer: "https://www.youtube.com/watch?v=j3qBGOD4b4A", Genre: "Rom-Com", Strarring: "Lucy Hale - Austin Stowell", BoxOffice: "$294,625", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: "Resolving to achieve professional success without compromising her ethics, Lucy embarks on a ruthless game of one-upmanship against cold and efficient nemesis Joshua, a rivalry that is complicated by her growing attraction to him."},
+     {movie: "Carter", url: "/carter.jpg", trailer: "", Genre: "Action ", Strarring: "Joo Won - Camilla Belle", BoxOffice: "$100 million", Duration: "1h 42m", Rating: 33, YearReleased: 2022, story: "A man wakes up missing his memories. Directed by a mysterious voice from a device in his ear, he sets off on a hostage rescue mission rife with danger."},
+     {movie: "Thirteen lives", url: "/picthirteen.jpg", trailer: "", Genre: "Drama", Strarring: "Viggo Mortensen - Colin Farrell", BoxOffice: "$142 million", Duration: "2h 27m", Rating: 88, YearReleased: 2022, story: "A rescue mission is assembled in Thailand where a group of young boys and their soccer coach are trapped in a system of underground caves that are flooding."},
+     {movie: "Morbius", url: "/morbius.jpg", trailer: "", Genre: "Action", Strarring: "Jared Leto - Matt Smith", BoxOffice: "$163.9 million", Duration: "1h 44m", Rating: 15, YearReleased: 2022, story: "Determined to cure the disease that has plagued him his entire life, Morbius conducts a drastic experiment, which bears unforeseen consequences."},
+     {movie: "Deep water", url: "/deepwaterpic.jpg", trailer: "", Genre: "Drama", Strarring: "Ana de Armas - Ben Affleck", BoxOffice: "$248.9 million", Duration: "1h 55m", Rating: 36, YearReleased: 2022, story: "Vic and Melinda, a married couple, fall out of love with each other and the latter pursues extramarital affairs. However, when her lovers all disappear, the suspicion falls on Vic."},
+     {movie: "The man from Tornto", url: "/theManFrompic.jpg", trailer: "", Genre: "Action", Strarring: "Kevin Hart - Woody Harrelson", BoxOffice: "$375 million", Duration: "1h 35m", Rating: 24, YearReleased: 2022, story: "A case of mistaken identity forces a bumbling entrepreneur to team up with a notorious assassin in hopes of staying alive."},
+     {movie: "The gray man", url: "/theGrayMan.jpg", trailer: "", Genre: "Action", Strarring: "Ryan Gosling - Ana de Armas", BoxOffice: "$205 million", Duration: "2h 2m", Rating: 46, YearReleased: 2022, story: "When the CIA's top asset -- his identity known to no one -- uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague."},
+     {movie: "The lost city", url: "/theLostCity.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "$165 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Senior year", url: "/seniorYear.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "$89 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Let's be cops", url: "/letsBeCops.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "$189 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The hangover", url: "/theHangover.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "$140 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "I love you, man", url: "/iLoveYouMan.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "$255 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Due date", url: "/dueDate.jpg ", trailer: "", Genre: "", Strarring: "", BoxOffice: "$180 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Bad trip", url: "/badTrip.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Persuasion", url: "/persuasionMovie.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Unforgivable", url: "/theUnforgiv.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Mauritanian", url: "/theMaurit.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Through My Window", url: "/throughMyWi.png", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Little Women", url: "/littleWomen.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Interceptor", url: "/Interceptor.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Tomorrow War", url: "/theTomorow.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Lost City", url: "/theLostCity.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Wrath of Man", url: "/wrathOfMan.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Contractor", url: "/theContract.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Age of Adaline", url: "/theAgeOf.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Shape Of Water", url: "/theShpe.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Bodyguard", url: "/theBodyguard.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Never Let Me Go", url: "/neverLetMe.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Focus", url: "/Focus.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Scream", url: "/Scream.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "No One Gets Out Alive", url: "/noOne.png", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "Umma", url: "/Umma.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Nun", url: "/theNun.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""},
+     {movie: "The Grudge", url: "/theGrudge.jpg", trailer: "", Genre: "", Strarring: "", BoxOffice: "", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: ""}]
+
+const type = [{type: "Recently added", id: "Recently-added"}, {type: "Popular now", id: "Popular-now"}, {type: "Comedy", id: "Comedy"}, {type: "Drama", id: "Drama"},{type: "Action", id: "Action"},{type: "Romance", id: "Romance"},{type: "Horror", id: "Horror"}]
 let j=0
 for(let i=0; i<7; i++){
     
-    const big = $(`<div class="big"><h1 class="genre">${type[i].type}</h1></div>`)
+    const big = $(`<div class="big"><h1 class="genre" id = ${type[i].id}>${type[i].type}</h1></div>`)
 body.append(big)
 
 const house = $('<div class="house"></div>')
@@ -84,12 +123,16 @@ big.append(house)
 
 
 for(let i=j; i<j+5; i++){
-  
+
     let x = $(`<div class="movie"></div>`)
     let y = $(`<div class="movie-image"></div>`)
     y.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
     let z = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
     let butt = $(`<button class="watchlist-btn">Add to watch list</button>`)
+    house.append(x)
+    x.append(y)
+    x.append(z)
+    x.append(butt)
 
     butt.one("click", function(){
         let newObj = {}
@@ -111,15 +154,75 @@ for(let i=j; i<j+5; i++){
         }
 
     })
-    house.append(x)
-    x.append(y)
-    x.append(z)
-    x.append(butt)
+    
 }
 j+=5
 
 }
 
+const movieImgDiv = $(".movie-image")
+movieImgDiv.on("click", function(){
+    let blabla = $(this).parent().text()
+    for(let i=0; i<movieArray.length; i++){
+        if(blabla.includes(movieArray[i].movie)){
+            console.log(i);
+            body.html('<div class = "specific"></div>')
+            // body.css("background-color", "white")
+
+            //HABID starts here:::
+            const specific = $(".specific")
+            const specificBabyOne = $(`<div class="specific-one"><h2 class="specific-text">${movieArray[i].movie}</h2><img class="imagess" src="./images${movieArray[i].url}"/></div>`)
+            const specificBabyTwo = $(`<div class="specific-two"></div>`)
+            const x = $('<div class="rpg"></div>')
+            specificBabyTwo.append(x)
+
+            if(movieArray[i].Rating<50){
+                const babyTwoFirst = $(`<div class="unknow-one">Rating: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16"><path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg></div><div class="unknow-two"><a href = ${movieArray[i].trailer}><svg class = "link" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg> Watch trailer</a></p></div>`)
+                x.append(babyTwoFirst)
+
+            }else if(movieArray[i].Rating>=50 && movieArray[i].Rating<60){
+          const babyTwoFirst = $(`<div class="unknow-one">Rating: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg></div><div class="unknow-two"><a href = ${movieArray[i].trailer}><svg class = "link" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg> Watch trailer</a></p></div>`)
+                x.append(babyTwoFirst)
+
+            }else if(movieArray[i].Rating>=60 && movieArray[i].Rating<70){
+                const babyTwoFirst = $(`<div class="unknow-one">Rating: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16"><path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg></div><div class="unknow-two"><a href = ${movieArray[i].trailer}><svg class = "link" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg> Watch trailer</a></p></div>`)
+                x.append(babyTwoFirst)
+            }else if(movieArray[i].Rating>=70 && movieArray[i].Rating<80){
+                const babyTwoFirst = $(`<div class="unknow-one">Rating: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg></div><div class="unknow-two"><a href = ${movieArray[i].trailer}><svg class = "link" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg> Watch trailer</a></p></div>`)
+                x.append(babyTwoFirst)
+
+            }else if(movieArray[i].Rating>=80 && movieArray[i].Rating<90){
+                const babyTwoFirst = $(`<div class="unknow-one">Rating: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16"><path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/></svg></div><p><div class="unknow-two"><a href = ${movieArray[i].trailer}><svg class = "link" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg> Watch trailer</a></p></div>`)
+                x.append(babyTwoFirst)
+
+            }else if(movieArray[i].Rating>=90 && movieArray[i].Rating<=100){
+                const babyTwoFirst = $(`<div class="unknow-one">Rating: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></div><div class="unknow-two"><a href = ${movieArray[i].trailer}><svg class = "link" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg> Watch trailer</a></p></div>`)
+                x.append(babyTwoFirst)
+
+            }
+            specific.append(specificBabyOne)
+            specific.append(specificBabyTwo)
+            const babyTwoSecond = $('<div class="baby-two-second"></div>')
+            const unorderedList = $('<ul class="unordered"></ul>')
+            const genre = $(`<li>Genre:   ${movieArray[i].Genre}</li>`)
+            const stars = $(`<li>Strarring:   ${movieArray[i].Strarring}</li>`)
+            const Released = $(`<li>Year released:   ${movieArray[i].YearReleased}</li>`)
+            const durationn = $(`<li>Duration:   ${movieArray[i].Duration}</li>`)
+            const boxOffice = $(`<li>Box office:   ${movieArray[i].BoxOffice}</li>`)
+            const story = $(`<li>About:<span class="potato"> ${movieArray[i].story}</span></li>`)
+            specificBabyTwo.append(babyTwoSecond)
+            babyTwoSecond.append(unorderedList)
+            unorderedList.append(genre)
+            unorderedList.append(stars)
+            unorderedList.append(Released)
+            unorderedList.append(durationn)
+            unorderedList.append(boxOffice)
+            unorderedList.append(story)
+            
+        }
+    }
+    
+})
 
 const footer = $('<div class="foooter"></div>')
 body.append(footer)

@@ -38,7 +38,7 @@ body{
 .house{
     width: 100%;
     height: 300px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     justify-content: space-around;
 }
@@ -51,6 +51,8 @@ body{
     flex-direction: column;
 
 }
+
+
 .movie-image{
     height: 75%;
     margin-top: 10px;
@@ -145,7 +147,51 @@ body{
 .houseee{
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    width: 100%;
+    
 }
+
+.watch-list{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.wtclist{
+    display: flex;
+    flex-direction: column;
+    /* background-color: white; */
+    width: 60%;
+    margin-left: 80px;
+    /* margin-top: 30px; */
+    margin-bottom: 30px;
+}
+.wtclist-text{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.wtclist-img{
+    width: 100%;
+    height: 400px;
+}
+.remove{
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+.remove:hover{
+    background-color: aqua;
+
+}
+
+
 
 a{
     color: black;
@@ -155,4 +201,94 @@ a{
     margin-top: 20px;
     margin-left: 10px;
 }
+
+.specific{
+   margin-top: 50px;
+   width: 100%;
+   height: 600px;
+   display: flex;
+}
+
+.specific-one{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+.specific-text{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.imagess{
+    width: 400px;
+    height: 90%;
+}
+.specific-two{
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+
+}
+
+.rpg{
+    display: flex;
+    font-size: 35px;
+    justify-content: space-around;
+}
+.link{
+    width: 80px;
+    height: 30px;
+    /* margin-left: -100px; */
+}
+
+.baby-two-second{
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 40px;
+    line-height: 50px;
+}
+
+.potato{
+    line-height: 10px;
+}
+
+.unknow-two{
+    /* margin-left: 30px; */
+}
+
+/* .specific-image{
+    height: 500px;
+    width: 350px;
+    margin-left: 30px; 
+    float: left; 
+     margin: auto;
+ } 
+.imagess{
+    height: 500px;
+    width: 350px;
+}
+
+.specificInfo{
+    height: 100%;
+    width: 300px;
+    float: right;
+}
+.potato{
+    text-align: center;
+}
+.unordered{
+    width: 300px;
+    margin-left: 50px;
+    padding-left: 30px;
+    margin-top: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.8rem;
+}  */
+
+/* .biyc{
+    width: 192px;
+    height: 225px;
+} */
 
