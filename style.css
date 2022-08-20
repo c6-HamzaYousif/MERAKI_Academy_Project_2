@@ -25,7 +25,15 @@ body{
 }
 .big{
     margin-top: 100px;
+}
 
+.search-input{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+}
+.search-input::placeholder{
+    text-align: center;
 }
 .gallery{
     width: 100%;
@@ -158,6 +166,10 @@ body{
     font-size: 35px;
 }
 
+.remember:hover{
+    color: blue;
+}
+
 .wtclist{
     display: flex;
     flex-direction: column;
@@ -253,42 +265,56 @@ a{
     line-height: 10px;
 }
 
-.unknow-two{
-    /* margin-left: 30px; */
-}
-
-/* .specific-image{
-    height: 500px;
-    width: 350px;
-    margin-left: 30px; 
-    float: left; 
-     margin: auto;
- } 
-.imagess{
-    height: 500px;
-    width: 350px;
-}
-
-.specificInfo{
-    height: 100%;
+.sign-in-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* margin-left: 200px; */
+    
+    margin: auto;
+    margin-top: 100px; 
     width: 300px;
-    float: right;
+    height: 400px;
+    background-color: white;
+    border: 1px solid black;
+    
 }
-.potato{
+.sign-in-input{
+    width: 98%;
+    height: 30px;
+    margin-left: 1px;
+    margin-top: 10px;
+}
+.sign-in-input::placeholder{
     text-align: center;
 }
-.unordered{
-    width: 300px;
-    margin-left: 50px;
-    padding-left: 30px;
-    margin-top: 80px;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.8rem;
-}  */
-
-/* .biyc{
-    width: 192px;
-    height: 225px;
+/* .input-container{
+    margin: a;
 } */
+.icon{
+    align-self: center;
+    /* width: 100px; */
+    height: 60px;
+}
+.svg-input{
+    align-self: center;
+    width: 80px;
+    height: 80px;
+    /* color: blue; */
 
+}
+.sign-in-text{
+    text-align: center;
+    font-size: 30px;
+    /* margin-bottom: -80px; */
+
+}
+.sing-in-btn{
+    /* width: 80px; */
+    height: 30px;
+    margin-bottom: -5px; 
+    /* background-color: rgb(182, 220, 229); */
+}
+.sing-in-btn:hover{
+    background-color: rgb(182, 220, 229);
+}
