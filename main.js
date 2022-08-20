@@ -37,15 +37,34 @@ const movieArray = [{movie: "Day shift", url: "/dayShift.jpg", trailer: "https:/
 const type = [{type: "Recently added", id: "Recently-added"}, {type: "Popular now", id: "Popular-now"}, {type: "Comedy", id: "Comedy"}, {type: "Drama", id: "Drama"},{type: "Action", id: "Action"},{type: "Romance", id: "Romance"},{type: "Horror", id: "Horror"}]
 
 const body = $("body")
-const dropList = $(".drop-list")
-dropList.html('<select><option value="none" selected disabled hidden>Pick a category</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Horror">Horror</option></select>')
+// const dropList = $(".drop-list")
+// dropList.html('<select><option value="none" selected disabled hidden>Pick a category</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Horror">Horror</option></select>')
+//<a href="#Comedy">Comedy</a>
+// dropList.html(`<select onchange="if ${this}.val() windlocation.href='#${this}.value'"><option value="none" selected disabled hidden>Pick a category</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Horror">Horror</option></select>`)
+
 
 const logo = $(".logo")
 logo.html('<h2><span class="first-half">Movie</span><span class="second-half">Guide</span></h2>')
 
 const search = $(".search")
-search.html('<input class = "search-input"  type="text" placeholder="Search for a movie, actor, genre..etc"/>')
-console.log(search.val())
+search.html('<div class = "search-container"><input class = "search-input"  type="text" placeholder="Search for a movie, actor, genre..etc"/><button class="search-btn">Search</button></div>')
+const searchBtn = $(".search-btn")
+const searchInput = $(".search-input")
+searchBtn.on("click", function(){
+    console.log(searchInput.val())
+    let filteredArray = movieArray.filter(function(elem, i){
+        return (searchInput.val().toLowerCase() === elem.movie.toLowerCase()) || (searchInput.val().toLowerCase() === elem.Genre.toLowerCase()) || (elem.Strarring.toLowerCase().includes(searchInput.val().toLowerCase()))
+    })
+    console.log(filteredArray)
+    body.html(`<div class="search-result"><h2>Movies related to '${searchInput.val()}'</h2></div>`)
+    let searchContainer = $('<div class="srch-container"></div>')
+    body.append(searchContainer)
+    for(let j=0; j<filteredArray.length; j++){
+        let test =  $(`<div class="srch"><h2 class="srch-text">${filteredArray[j].movie}</h2><img class="srch-img" src="./images${filteredArray[j].url}"/></div>`)
+        searchContainer.append(test)
+    }
+    
+})
 
 let watchListArray = []
 let watchListArrayOfObjects = []
@@ -113,6 +132,29 @@ signIn.on("click", function(){
 
 const fqa = $(".fqa")
 fqa .html('<h2><span class="f">F</span><span class="a">A</span><span class="q">Q</span></h2>')
+fqa.on("click", function(){
+    body.html('<div class = "fqa-eds">Frequently Asked Question</div>')
+    body.css("background-color", "rgb(7, 7, 61)")
+    const fqaContainer = $('<div class = "fqa-container"></div>')
+    body.append(fqaContainer)
+    for(let i=0; i<3; i++){
+        if(i===0){
+            const biggieSmalls = $('<div class = "biggie"><div class = "fqa-question">Why should I sign in with MovieGuide?</div><div class = "fqa-answer">If you are a big movies fan, then MovieGuide is the perfect website for you, since it has everything you need about films and your favourite movie stars.</div></div>')
+            fqaContainer.append(biggieSmalls)
+        }
+        if(i===1){
+            const biggieSmalls = $('<div class = "biggie"><div class = "fqa-question">How can I add movies to my watch-list?</div><div class = "fqa-answer">Under each movie picture, you can find an add to watchlist button, once you click on it, you can check your watchlist, it will be there.</div></div>')
+            fqaContainer.append(biggieSmalls)
+        }
+        if(i===2){
+            const biggieSmalls = $('<div class = "biggie"><div class = "fqa-question">Is there a way to contact you?</div><div class = "fqa-answer">If you scroll down to the bottm of the website, you can find our social media accounts where you are more than welcome to reach out to us, and you can always leave your feedback in the comments & suggestions box.</div></div>')
+            fqaContainer.append(biggieSmalls)
+        }
+
+    }
+    
+
+})
 
 let j=0
 for(let i=0; i<7; i++){
@@ -140,10 +182,11 @@ for(let i=j; i<j+5; i++){
     x.append(z)
     x.append(butt)
 
-    butt.one("click", function(){
+    butt.on("click", function(){
         let newObj = {}
         let sibling = $(this).siblings()
         $(this).css("background-color", "rgb(30, 173, 173)")
+        let btnawi = $(this)
         
         for(let i=0; i<movieArray.length; i++){
             
@@ -158,6 +201,26 @@ for(let i=j; i<j+5; i++){
                 
             }
         }
+        btnawi.hide(1000)
+        const rmvBtn = $('<button class="watchlist-btn">Remove from watchlist</button>')
+        rmvBtn.hide()
+        x.append(rmvBtn)
+        rmvBtn.show(1000)
+        rmvBtn.on("click", function(){
+            console.log($(this).siblings().text());
+            let y = $(this).siblings().text()
+            for(let i=0; i<watchListArrayOfObjects.length; i++){
+                if(y.includes(watchListArrayOfObjects[i].movie)){
+                    watchListArrayOfObjects.splice(i,1)
+                    $(this).hide(1000)
+                    btnawi.show(1000)
+                    // const shwBtn = $('<button class="watchlist-btn">Add from watchlist</button>')
+                    // rmvBtn.hide()
+                    // x.append(rmvBtn)
+                    // rmvBtn.show(1000)
+                }
+            }
+        })
 
     })
     

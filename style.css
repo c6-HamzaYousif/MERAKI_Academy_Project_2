@@ -4,7 +4,8 @@
 }
 
 body{
-    background-color: rgb(199, 199, 216);
+    /* background-color: rgb(199, 199, 216); */
+    background-color: paleturquoise;
  
 }
 .container{
@@ -16,11 +17,11 @@ body{
     
 
 .nav{
-    width: 12.5%;
+    width: 14.2%;
     text-align: center;    
 }
 .navb{
-    width: 37.5%;
+    width: 43%;
     text-align: center;
 }
 .big{
@@ -28,7 +29,7 @@ body{
 }
 
 .search-input{
-    width: 100%;
+    width: 90%;
     height: 30px;
     border-radius: 10px;
 }
@@ -57,6 +58,7 @@ body{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    /* background-color: whitesmoke; */
 
 }
 
@@ -317,4 +319,80 @@ a{
 }
 .sing-in-btn:hover{
     background-color: rgb(182, 220, 229);
+}
+
+.search-container{
+    display: flex;
+}
+
+.search-btn{
+    border-radius: 10px;
+    padding: 3px;
+    background-color: white;
+}
+
+/* .houseee{ display: grid; grid-template-columns: repeat(2, 50%); width: 100%;}
+.watch-list{margin-top: 20px; margin-bottom: 20px;text-align: center;font-size: 35px;}
+.wtclist{display: flex;flex-direction: column; width: 60%;margin-left: 80px;margin-bottom: 30px;}
+.wtclist-text{text-align: center;font-size: 30px;margin-bottom: 20px;margin-top: 20px;}
+.wtclist-img{width: 100%;height: 400px;} */
+.search-result{
+    margin-top: 20px;
+     margin-bottom: 20px;
+     text-align: center;
+     font-size: 30px;
+    border-bottom: 1px solid black;
+    
+
+}
+.srch-container{
+    display: grid; grid-template-columns: repeat(3, 33%); width: 100%;
+}
+.srch{
+    display: flex;flex-direction: column; width: 60%;margin-left: 80px;margin-bottom: 30px;
+
+}
+.srch-text{
+    text-align: center;font-size: 30px;margin-bottom: 20px;margin-top: 20px;
+
+}
+.srch-img{
+    width: 100%;height: 400px;
+
+}
+
+.fqa-container{
+    width: 70%;
+    height: 500px;
+    margin: auto;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    color: white;
+    
+}
+.biggie{
+    height: 100%;
+}
+.fqa-question{
+    /* width: 80%; */
+    background-image: linear-gradient(to right, rgb(167, 167, 182) , rgb(80, 42, 110));
+    color: rgba(213, 224, 228, 0.986);
+    font-size: 35px;
+    padding: 10px;
+}
+
+.fqa-answer{
+    font-size: 25px;
+    margin-top: 20px;
+}
+.fqa-eds{
+    color: rgba(197, 215, 221, 0.986);
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+
 }
