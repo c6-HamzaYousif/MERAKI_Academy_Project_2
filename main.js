@@ -37,18 +37,15 @@ const movieArray = [{movie: "Day shift", url: "/dayShift.jpg", trailer: "https:/
 const type = [{type: "Recently added", id: "Recently-added"}, {type: "Popular now", id: "Popular-now"}, {type: "Comedy", id: "Comedy"}, {type: "Drama", id: "Drama"},{type: "Action", id: "Action"},{type: "Romance", id: "Romance"},{type: "Horror", id: "Horror"}]
 
 const body = $("body")
-// const dropList = $(".drop-list")
-// dropList.html('<select><option value="none" selected disabled hidden>Pick a category</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Horror">Horror</option></select>')
-//<a href="#Comedy">Comedy</a>
-// dropList.html(`<select onchange="if ${this}.val() windlocation.href='#${this}.value'"><option value="none" selected disabled hidden>Pick a category</option><option value="Comedy">Comedy</option><option value="Drama">Drama</option><option value="Action">Action</option><option value="Romance">Romance</option><option value="Horror">Horror</option></select>`)
 
-
+//log element
 const logo = $(".logo")
 logo.html('<h2><span class="first-half">Movie</span><span class="second-half">Guide</span></h2>')
 
+// Search
 const search = $(".search")
-search.html('<div class = "search-container"><input class = "search-input"  type="text" placeholder="Search for a movie, actor, genre..etc"/><button class="search-btn">Search</button></div>')
-const searchBtn = $(".search-btn")
+search.html('<div class = "search-container"><input class = "search-input"  type="text" placeholder="Search for a movie, actor, genre..etc"/><svg class="svg-search" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></div>')
+const searchBtn = $(".svg-search")
 const searchInput = $(".search-input")
 searchBtn.on("click", function(){
     console.log(searchInput.val())
@@ -66,17 +63,16 @@ searchBtn.on("click", function(){
     
 })
 
+//watchlist
 let watchListArray = []
 let watchListArrayOfObjects = []
 
 const watchList = $(".watch")
 watchList.html("<h2>WatchList</h2>")
 watchList.on("click",function(){
+    watchListArrayOfObjects = JSON.parse(localStorage.getItem("movies"))
+    console.log(watchListArrayOfObjects);
 
-    // const jsonOb = JSON.stringify(watchListArray)
-    // localStorage.setItem("movies", jsonOb)
-    // const newww = localStorage.getItem("movies")
-    // const watchListArrayOfObjects = JSON.parse(newww)
     body.html(`<div class="watch-list"><h2>My WatchList</h2></div>`)
     let house = $('<div class="houseee"></div>')
     body.append(house)
@@ -89,7 +85,9 @@ watchList.on("click",function(){
             let y = $(this).siblings()
             for(let i=0; i<watchListArrayOfObjects.length; i++){
                 if(y.text() === watchListArrayOfObjects[i].movie){
+                    
                     watchListArrayOfObjects.splice(i,1)
+                    localStorage.setItem("movies", JSON.stringify(watchListArrayOfObjects))
                 }
             }
             x.remove()
@@ -97,11 +95,14 @@ watchList.on("click",function(){
     }
 })
 
+//sign in
 const signIn = $(".sign-in")
 signIn.html("<h2>Sign In</h2>")
 signIn.on("click", function(){
-    body.html('<div class = "sign-in-page"></div>')
-    const signInPage = $(".sign-in-page")
+    body.html('<div class = "sign-in-big"></div>') 
+    const signInContainer = $(".sign-in-big")
+    const signInPage = $('<div class = "sign-in-page"></div>')
+    signInContainer.append(signInPage)
     const texxt = $('<h2 class = "sign-in-text">Sign In</h2>')
     const icon = $('<div class = "icon"><svg class = "svg-input" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/></svg></div>')
     signInPage.append(icon)
@@ -109,8 +110,7 @@ signIn.on("click", function(){
     const inputContainer = $(`<div class="input-container"></div>`)
     signInPage.append(inputContainer)
     for(let i=0; i<4; i++){
-        // let signField = $(`<div class="sign-in-input"></div>`)
-        // signInPage.append(signField)
+
         let fields
         if(i===0){
               fields = $('<input class="sign-in-input" type="text" placeholder="First Name"/>')
@@ -130,6 +130,7 @@ signIn.on("click", function(){
     signInPage.append(signInButton)
 })
 
+//FAQ
 const fqa = $(".fqa")
 fqa .html('<h2><span class="f">F</span><span class="a">A</span><span class="q">Q</span></h2>')
 fqa.on("click", function(){
@@ -155,6 +156,28 @@ fqa.on("click", function(){
     
 
 })
+
+//dark mode
+const mode = $(".dark")
+mode.html('<svg class = "darkk mode" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/></svg><svg class = "light mode" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>')
+const darkMode = $(".darkk")
+const lightMode = $(".light")
+
+darkMode.on("click", function(){
+    lightMode.css("visibility", "visible")
+    darkMode.css("visibility", "hidden")
+    // body.css("background-color", "black")
+    // body.css("color", "white")
+})
+
+lightMode.on("click", function(){
+    darkMode.css("visibility", "visible")
+    lightMode.css("visibility", "hidden")
+    body.css("background-color", "#EBDCBF")
+    body.css("color", "rgb(129, 85, 85)")
+})
+
+
 
 let j=0
 for(let i=0; i<7; i++){
@@ -185,7 +208,6 @@ for(let i=j; i<j+5; i++){
     butt.on("click", function(){
         let newObj = {}
         let sibling = $(this).siblings()
-        $(this).css("background-color", "rgb(30, 173, 173)")
         let btnawi = $(this)
         
         for(let i=0; i<movieArray.length; i++){
@@ -212,12 +234,9 @@ for(let i=j; i<j+5; i++){
             for(let i=0; i<watchListArrayOfObjects.length; i++){
                 if(y.includes(watchListArrayOfObjects[i].movie)){
                     watchListArrayOfObjects.splice(i,1)
+                    localStorage.setItem("movies", JSON.stringify(watchListArrayOfObjects))
                     $(this).hide(1000)
                     btnawi.show(1000)
-                    // const shwBtn = $('<button class="watchlist-btn">Add from watchlist</button>')
-                    // rmvBtn.hide()
-                    // x.append(rmvBtn)
-                    // rmvBtn.show(1000)
                 }
             }
         })
@@ -236,7 +255,6 @@ movieImgDiv.on("click", function(){
         if(blabla.includes(movieArray[i].movie)){
             console.log(i);
             body.html('<div class = "specific"></div>')
-            // body.css("background-color", "white")
 
             //HABID starts here:::
             const specific = $(".specific")
