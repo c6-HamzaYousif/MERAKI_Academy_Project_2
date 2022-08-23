@@ -15,6 +15,9 @@ body{
     border: 2px solid rgb(68, 38, 55);
     align-items: center;
     background-color: rgb(68, 38, 55);
+    position: fixed;
+  top: 0;
+  width: 100%;
 }
     
 
@@ -76,15 +79,7 @@ body{
     text-align: center;
     margin-top: 10px;
 }
-.watchlist-btn{
-    padding: 2px;
-    background-color: #180413;
-    color: white;
-    margin: auto;
-}
-.watchlist-btn:hover{
-    background-color: rgb(88, 37, 84);
-}
+
 .watchlist-btn:active{
     background-color: rgb(30, 173, 173);
 }
@@ -101,7 +96,9 @@ body{
     color: red;
 
 }
-
+.nav{
+    cursor: pointer;
+}
 .f{
     color: rgb(229, 232, 238);
 
@@ -210,10 +207,11 @@ body{
     margin-bottom: 15px;
     border-radius: 8px;
     font-size: 17px;
+    background-color: #180413;
+    color: white;
 }
 .remove:hover{
-    background-color: aqua;
-
+    background-color: rgb(88, 37, 84);
 }
 
 
@@ -428,4 +426,35 @@ a{
 
 a{
     color: white;
+}
+.movie-div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+    gap: 3px;
+}
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 90%;
+}
+.movie-card-image{
+    height: 220px;
+    width: 100%;
+}
+.movie-card-name{
+    text-align: center;
+    font-size: 20px;
+    height: 50px;
+}
+.movie-card-button{
+    padding: 2px;
+    background-color: #180413;
+    color: white;
+    margin: auto;
+    height: 30px;
+}
+.movie-card-button:hover{
+    background-color: rgb(88, 37, 84);
 }

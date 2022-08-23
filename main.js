@@ -1,40 +1,40 @@
-const movieArray = [{movie: "Day shift", url: "/dayShift.jpg", trailer: "https://www.youtube.com/watch?v=GN_IwBptKi4", Genre: "Fantasy", Strarring: "Jamie Fox - Dave Franco", BoxOffice: "$100 million", Duration: "1h 54m", Rating: 57, YearReleased: 2022, story: "A hardworking dad out to provide for his daughter uses a boring pool-cleaning job as a front for his real gig: hunting and killing vampires."},
-     {movie: "The hating game", url: "/The-Hating-Game.jpg", trailer: "https://www.youtube.com/watch?v=j3qBGOD4b4A", Genre: "Rom-Com", Strarring: "Lucy Hale - Austin Stowell", BoxOffice: "$32 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: "Resolving to achieve professional success without compromising her ethics, Lucy embarks on a ruthless game of one-upmanship against cold and efficient nemesis Joshua, a rivalry that is complicated by her growing attraction to him."},
-     {movie: "Carter", url: "/carter.jpg", trailer: "https://www.youtube.com/watch?v=ulPHag30btQ", Genre: "Action ", Strarring: "Joo Won - Camilla Belle", BoxOffice: "$100 million", Duration: "1h 42m", Rating: 33, YearReleased: 2022, story: "A man wakes up missing his memories. Directed by a mysterious voice from a device in his ear, he sets off on a hostage rescue mission rife with danger."},
-     {movie: "Thirteen lives", url: "/picthirteen.jpg", trailer: "https://www.youtube.com/watch?v=R068Si4eb3Y", Genre: "Drama", Strarring: "Viggo Mortensen - Colin Farrell", BoxOffice: "$142 million", Duration: "2h 27m", Rating: 88, YearReleased: 2022, story: "A rescue mission is assembled in Thailand where a group of young boys and their soccer coach are trapped in a system of underground caves that are flooding."},
-     {movie: "Morbius", url: "/morbius.jpg", trailer: "https://www.youtube.com/watch?v=oZ6iiRrz1SY", Genre: "Action", Strarring: "Jared Leto - Matt Smith", BoxOffice: "$163.9 million", Duration: "1h 44m", Rating: 15, YearReleased: 2022, story: "Determined to cure the disease that has plagued him his entire life, Morbius conducts a drastic experiment, which bears unforeseen consequences."},
-     {movie: "Deep water", url: "/deepwaterpic.jpg", trailer: "https://www.youtube.com/watch?v=h0zqe_As_qo", Genre: "Drama", Strarring: "Ana de Armas - Ben Affleck", BoxOffice: "$248.9 million", Duration: "1h 55m", Rating: 36, YearReleased: 2022, story: "Vic and Melinda, a married couple, fall out of love with each other and the latter pursues extramarital affairs. However, when her lovers all disappear, the suspicion falls on Vic."},
-     {movie: "The man from Tornto", url: "/theManFrompic.jpg", trailer: "https://www.youtube.com/watch?v=urqy8DrcGBs", Genre: "Action", Strarring: "Kevin Hart - Woody Harrelson", BoxOffice: "$375 million", Duration: "1h 35m", Rating: 24, YearReleased: 2022, story: "A case of mistaken identity forces a bumbling entrepreneur to team up with a notorious assassin in hopes of staying alive."},
-     {movie: "The gray man", url: "/theGrayMan.jpg", trailer: "https://www.youtube.com/watch?v=BmllggGO4pM", Genre: "Action", Strarring: "Ryan Gosling - Ana de Armas", BoxOffice: "$205 million", Duration: "2h 2m", Rating: 46, YearReleased: 2022, story: "When the CIA's top asset -- his identity known to no one -- uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague."},
-     {movie: "The lost city", url: "/theLostCity.jpg", trailer: "https://www.youtube.com/watch?v=nfKO9rYDmE8", Genre: "Romance", Strarring: "Sandra Bullock - Channing Tatum", BoxOffice: "$165 million", Duration: "1h 52m", Rating: 79, YearReleased: 2022, story: "Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a handsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric billionaire who hopes she can lead him to an ancient city's lost treasure from her latest story. Determined to prove he can be a hero in real life and not just on the pages of her books, Alan sets off to rescue her."},
-     {movie: "Senior year", url: "/seniorYear.jpg", trailer: "https://www.youtube.com/watch?v=HCtDkpe89aY", Genre: "Comedy", Strarring: "Rebel Wilson - Angourie Rice", BoxOffice: "$89 million", Duration: "1h 32m", Rating: 33, YearReleased: 2022, story: "A high-school cheerleader falls into a coma before her prom; twenty years later, she awakens and wants to return to high school to reclaim her status and become prom queen."},
-     {movie: "Let's be cops", url: "/letsBeCops.jpg", trailer: "https://www.youtube.com/watch?v=q6q73NTqH-o", Genre: "Comedy", Strarring: "Jake Johnson - Nina Dobrev", BoxOffice: "$189 million", Duration: "1h 51m", Rating: 23, YearReleased: 2014, story: "Two best friends, Ryan and Justin, attend their college reunion dressed up as cops. However, trouble ensues when they are presumed to be actual police officers and are made to fight gangsters."},
-     {movie: "The hangover", url: "/theHangover.jpg", trailer: "https://www.youtube.com/watch?v=tcdUhdOlz9M", Genre: "Comedy", Strarring: "Bradley Cooper - Zack Galafanakis", BoxOffice: "$140 million", Duration: "1h 40m", Rating: 79, YearReleased: 2009, story: "Doug and his three best men go to Las Vegas to celebrate his bachelor party. However, the three best men wake up the next day with a hangover and realise that Doug is missing."},
-     {movie: "I love you, man", url: "/iLoveYouMan.jpg", trailer: "https://www.youtube.com/watch?v=TJU061IOMMU", Genre: "Comedy", Strarring: "Paul Rudd - Jason Segal", BoxOffice: "$255 million", Duration: "1h 42m", Rating: 83, YearReleased: 2009, story: "Peter sets out to find out the perfect best man for his wedding. Things, however, take a drastic turn when his fiancee gets upset about his and his newly found best man's bond."},
-     {movie: "Due date", url: "/dueDate.jpg ", trailer: "https://www.youtube.com/watch?v=1p3NnJ_oiE0", Genre: "Comedy", Strarring: "Zack Galafanakis - Robert Downey Jr", BoxOffice: "$180 million", Duration: "1h 52m", Rating: 55, YearReleased: 2010, story: "Peter Highman must reach Los Angeles to make it in time for his child's birth. However, he is forced to travel with Ethan, an aspiring actor, who frequently lands him in trouble."},
-     {movie: "Bad trip", url: "/badTrip.jpg", trailer: "https://www.youtube.com/watch?v=UjT9I6eb4p8", Genre: "Comedy", Strarring: "Eric Andre - Tiffany Hadish", BoxOffice: "$221 million", Duration: "1h 47m", Rating: 76, YearReleased: 2021, story: "Hidden cameras capture two best friends pulling hilarious and inventive pranks on an unsuspecting public during a wild road trip."},
-     {movie: "Persuasion", url: "/persuasionMovie.jpg", trailer: "https://www.youtube.com/watch?v=Fz7HmgPJQak", Genre: "Drama", Strarring: "Cosmo Jarvis - Dakota Johnson", BoxOffice: "$87 million", Duration: "2h 7m", Rating: 88, YearReleased: 2022, story: "When Frederick Wentworth -- the one who got away -- crashes back into Anne Elliot's life, she must choose between putting the past behind her or listening to her heart when it comes to second chances."},
-     {movie: "The Unforgivable", url: "/theUnforgiv.jpg", trailer: "https://www.youtube.com/watch?v=JNUjx7LZoiU", Genre: "Drama", Strarring: "Sandra Bullock - John Bernthal", BoxOffice: "$110 million", Duration: "1h 32m", Rating: 66, YearReleased: 2021, story: "Ruth Slater, a woman released from prison after serving a sentence for a violent crime and attempts to re-enter society. She must try to put her life back together again in a world that refuses to forgive her past."},
-     {movie: "The Mauritanian", url: "/theMaurit.jpg", trailer: "https://www.youtube.com/watch?v=sRSGg54yvjQ", Genre: "Drama", Strarring: "Jodie Foster - Tahar Rahim", BoxOffice: "$79 million", Duration: "2h 2m", Rating: 55, YearReleased: 2021, story: "A defence attorney, her associate, and a military prosecutor uncover a far-reaching conspiracy while investigating the case of a suspected 9/11 terrorist imprisoned at Guantanamo Bay, Cuba, for six years."},
-     {movie: "Through My Window", url: "/throughMyWi.png", trailer: "https://www.youtube.com/watch?v=_zxhK3Z-R0c", Genre: "Drama", Strarring: "Julio Pena - Clara Galle", BoxOffice: "$133 million", Duration: "1h 46m", Rating: 76, YearReleased: 2022, story: "Raquel has a longtime crush on her hot neighbour, Ares, whom she secretly watches but has never spoken to. Can she make Ares fall in love with her?"},
-     {movie: "Little Women", url: "/littleWomen.jpg", trailer: "https://www.youtube.com/watch?v=AST2-4db4ic", Genre: "Drama", Strarring: "Saoirse Ronan - Florence Pugh", BoxOffice: "$122 million", Duration: "1h 50m", Rating: 81, YearReleased: 2019, story: "While the March sisters enter the threshold of womanhood, they go through many ups and downs in life and endeavour to make important decisions that can affect their future."},
-     {movie: "Interceptor", url: "/Interceptor.jpg", trailer: "https://www.youtube.com/watch?v=OQSoII4Bj1o", Genre: "Action", Strarring: "Elsa Bataky - Luke Bracey", BoxOffice: "$115 million", Duration: "1h 44m", Rating: 72, YearReleased: 2022, story: "One Army captain is forced use her years of tactical training and military expertise when a simultaneous coordinated attack threatens the remote missile interceptor station of which she is in command."},
-     {movie: "The Tomorrow War", url: "/theTomorow.jpg", trailer: "https://www.youtube.com/watch?v=QPistcpGB8o", Genre: "Action", Strarring: "Chris Pratt - Betty Gilbin", BoxOffice: "$280 million", Duration: "1h 34m", Rating: 67, YearReleased: 2021, story: "When a group of time travellers from the future tell people about a war they are fighting with aliens, Dan, a school teacher, decides to help them win it in order to secure his daughter's future."},
-     {movie: "A Day to Die", url: "/aDayToDie.jpg", trailer: "https://www.youtube.com/watch?v=JnFQv6hnUuU", Genre: "Action", Strarring: "Kevin Dellon - Bruce Willis", BoxOffice: "$193 million", Duration: "1h 55m", Rating: 92, YearReleased: 2022, story: "After killing a drug syndicate member while protecting a parolee, Connor Connolly has one day to pay two million dollars in reparations he doesn't have to Tyrone Pettis. He is forced to ask his old military ops crew, led by Brice Mason, to come together and somehow get two million dollars before Connor loses everyone he loves."},
-     {movie: "Wrath of Man", url: "/wrathOfMan.jpg", trailer: "https://www.youtube.com/watch?v=EFYEni2gsK0", Genre: "Action", Strarring: "Jason Tatum - Scott Eastwood", BoxOffice: "$55 million", Duration: "1h 32m", Rating: 32, YearReleased: 2021, story: "H is a mysterious man who starts working for a cash moving truck company. He becomes known for using amazing precision and dexterity to neutralise robbers. However, H is actually out for revenge."},
-     {movie: "The Contractor", url: "/theContract.jpg", trailer: "https://www.youtube.com/watch?v=e7glvM8Xh0w", Genre: "Action", Strarring: "Chris Pine - Ben Foster", BoxOffice: "$115million", Duration: "2h 19m", Rating: 22, YearReleased: 2022, story: "Involuntarily discharged from the Army, a special forces sergeant lands a contract with a private underground military force. When his very first assignment goes awry, the elite soldier finds himself hunted and on the run, caught in a dangerous conspiracy and fighting to stay alive long enough to get home and uncover the true motives of those who betrayed him."},
-     {movie: "The Age of Adaline", url: "/theAgeOf.jpg", trailer: "https://www.youtube.com/watch?v=7UzSekc0LoQ", Genre: "Romance", Strarring: "Blake Lively - Harrison Ford", BoxOffice: "$88 million", Duration: "1h 46m", Rating: 73, YearReleased: 2015, story: "Adaline, who has been 29 for eight decades, meets and madly falls in love with Ellis. She is forced to make a life-altering decision after a meeting with his parents threatens to expose her secret."},
-     {movie: "The Shape Of Water", url: "/theShpe.jpg", trailer: "https://www.youtube.com/watch?v=XFYWazblaUA", Genre: "Romance", Strarring: "Sally Hawkins - Doug Jones", BoxOffice: "$125 million", Duration: "1h 48m", Rating: 51, YearReleased: 2017, story: "Elisa, a lonely janitor, stumbles upon an amphibious creature that is held captive in a secret research facility. She then develops a unique relationship with the creature."},
-     {movie: "The Bodyguard", url: "/theBodyguard.jpg", trailer: "https://www.youtube.com/watch?v=4JFRdJTszRM", Genre: "Romance", Strarring: "Kevin Costner - whitney Houston", BoxOffice: "$133 million", Duration: "2h 12m", Rating: 43, YearReleased: 1992, story: "Rachel, a singer and an actor, receives death threats from an obsessive stalker. However, things turn chaotic when she hires Frank, an ex-Secret Service agent, to be her bodyguard and falls for him."},
-     {movie: "Never Let Me Go", url: "/neverLetMe.jpg", trailer: "https://www.youtube.com/watch?v=sXiRZhDEo8A", Genre: "Romance", Strarring: "Andrew Garfield - Kiera Knightley", BoxOffice: "$67 million", Duration: "1h 35m", Rating: 62, YearReleased: 2010, story: "Kathy, Tommy and Ruth are raised in an idyllic environment at Hailsham, a boarding school. Even as they deal with pangs of love, a teacher lets it slip that their fate has already been written."},
-     {movie: "Focus", url: "/Focus.jpg", trailer: "https://www.youtube.com/watch?v=MxCRgtdAuBo", Genre: "Romance", Strarring: "Will Smith - Margot Robbie", BoxOffice: "$310 million", Duration: "1h 51m", Rating: 54, YearReleased: 2015, story: "Nicky, an accomplished con artist, gets romantically involved with his disciple, Jess, but, soon, ends their relationship. Years later, she returns as a femme fatale to spoil his plans."},
-     {movie: "Scream", url: "/Scream.jpg", trailer: "https://www.youtube.com/watch?v=beToTslH17s", Genre: "Horror", Strarring: "Melissa Barrera - Mason Gooding", BoxOffice: "$73 million", Duration: "2h 3m", Rating: 44, YearReleased: 2022, story: "Twenty-five years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past."},
-     {movie: "No One Gets Out Alive", url: "/noOne.png", trailer: "https://www.youtube.com/watch?v=sY2TLiK27g4", Genre: "Horror", Strarring: "Cristina Rodlo - Marc Menchaca", BoxOffice: "$70 million", Duration: "1h 55m", Rating: 72, YearReleased: 2021, story: "Desperate and without documentation, a woman from Mexico moves into a rundown Cleveland boarding house. Then the unsettling cries and eerie visions begin."},
-     {movie: "Umma", url: "/Umma.jpg", trailer: "https://www.youtube.com/watch?v=QQdXvvtu-iI", Genre: "Horror", Strarring: "Sandra Oh - Fivel Stewart", BoxOffice: "$120 million", Duration: "1h 32m", Rating: 56, YearReleased: 2022, story: "A woman's quiet life on an American farm takes a terrifying turn when the remains of her estranged mother arrive from Korea."},
-     {movie: "The Nun", url: "/theNun.jpg", trailer: "https://www.youtube.com/watch?v=pzD9zGcUNrw", Genre: "Horror", Strarring: "Taisa Farmiga - Bonnie Arons", BoxOffice: "$137 million", Duration: "1h 47m", Rating: 66, YearReleased: 2018, story: "A priest and a novice arrive in Romania to investigate the death of a young nun. However, things take an ugly turn after they encounter a supernatural force."},
-     {movie: "The Grudge", url: "/theGrudge.jpg", trailer: "https://www.youtube.com/watch?v=O2NKzO-fxwQ", Genre: "Horror", Strarring: "Sara Michelle - Jason Behr", BoxOffice: "$190 million", Duration: "1h 52m", Rating: 43, YearReleased: 2004, story: "Karen Davis moves to Tokyo, where she encounters a supernatural spirit that possesses its victims. After a series of horrifying and mysterious deaths, Karen makes a vow to stop any further deaths."}]
+// const movieArray = [{movie: "Day shift", url: "/dayShift.jpg", trailer: "https://www.youtube.com/watch?v=GN_IwBptKi4", Genre: "Fantasy", Strarring: "Jamie Fox - Dave Franco", BoxOffice: "$100 million", Duration: "1h 54m", Rating: 57, YearReleased: 2022, story: "A hardworking dad out to provide for his daughter uses a boring pool-cleaning job as a front for his real gig: hunting and killing vampires."},
+//      {movie: "The hating game", url: "/The-Hating-Game.jpg", trailer: "https://www.youtube.com/watch?v=j3qBGOD4b4A", Genre: "Rom-Com", Strarring: "Lucy Hale - Austin Stowell", BoxOffice: "$32 million", Duration: "1h 42m", Rating: 67, YearReleased: 2021, story: "Resolving to achieve professional success without compromising her ethics, Lucy embarks on a ruthless game of one-upmanship against cold and efficient nemesis Joshua, a rivalry that is complicated by her growing attraction to him."},
+//      {movie: "Carter", url: "/carter.jpg", trailer: "https://www.youtube.com/watch?v=ulPHag30btQ", Genre: "Action ", Strarring: "Joo Won - Camilla Belle", BoxOffice: "$100 million", Duration: "1h 42m", Rating: 33, YearReleased: 2022, story: "A man wakes up missing his memories. Directed by a mysterious voice from a device in his ear, he sets off on a hostage rescue mission rife with danger."},
+//      {movie: "Thirteen lives", url: "/picthirteen.jpg", trailer: "https://www.youtube.com/watch?v=R068Si4eb3Y", Genre: "Drama", Strarring: "Viggo Mortensen - Colin Farrell", BoxOffice: "$142 million", Duration: "2h 27m", Rating: 88, YearReleased: 2022, story: "A rescue mission is assembled in Thailand where a group of young boys and their soccer coach are trapped in a system of underground caves that are flooding."},
+//      {movie: "Morbius", url: "/morbius.jpg", trailer: "https://www.youtube.com/watch?v=oZ6iiRrz1SY", Genre: "Action", Strarring: "Jared Leto - Matt Smith", BoxOffice: "$163.9 million", Duration: "1h 44m", Rating: 15, YearReleased: 2022, story: "Determined to cure the disease that has plagued him his entire life, Morbius conducts a drastic experiment, which bears unforeseen consequences."},
+//      {movie: "Deep water", url: "/deepwaterpic.jpg", trailer: "https://www.youtube.com/watch?v=h0zqe_As_qo", Genre: "Drama", Strarring: "Ana de Armas - Ben Affleck", BoxOffice: "$248.9 million", Duration: "1h 55m", Rating: 36, YearReleased: 2022, story: "Vic and Melinda, a married couple, fall out of love with each other and the latter pursues extramarital affairs. However, when her lovers all disappear, the suspicion falls on Vic."},
+//      {movie: "The man from Tornto", url: "/theManFrompic.jpg", trailer: "https://www.youtube.com/watch?v=urqy8DrcGBs", Genre: "Action", Strarring: "Kevin Hart - Woody Harrelson", BoxOffice: "$375 million", Duration: "1h 35m", Rating: 24, YearReleased: 2022, story: "A case of mistaken identity forces a bumbling entrepreneur to team up with a notorious assassin in hopes of staying alive."},
+//      {movie: "The gray man", url: "/theGrayMan.jpg", trailer: "https://www.youtube.com/watch?v=BmllggGO4pM", Genre: "Action", Strarring: "Ryan Gosling - Ana de Armas", BoxOffice: "$205 million", Duration: "2h 2m", Rating: 46, YearReleased: 2022, story: "When the CIA's top asset -- his identity known to no one -- uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague."},
+//      {movie: "The lost city", url: "/theLostCity.jpg", trailer: "https://www.youtube.com/watch?v=nfKO9rYDmE8", Genre: "Romance", Strarring: "Sandra Bullock - Channing Tatum", BoxOffice: "$165 million", Duration: "1h 52m", Rating: 79, YearReleased: 2022, story: "Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a handsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric billionaire who hopes she can lead him to an ancient city's lost treasure from her latest story. Determined to prove he can be a hero in real life and not just on the pages of her books, Alan sets off to rescue her."},
+//      {movie: "Senior year", url: "/seniorYear.jpg", trailer: "https://www.youtube.com/watch?v=HCtDkpe89aY", Genre: "Comedy", Strarring: "Rebel Wilson - Angourie Rice", BoxOffice: "$89 million", Duration: "1h 32m", Rating: 33, YearReleased: 2022, story: "A high-school cheerleader falls into a coma before her prom; twenty years later, she awakens and wants to return to high school to reclaim her status and become prom queen."},
+//      {movie: "Let's be cops", url: "/letsBeCops.jpg", trailer: "https://www.youtube.com/watch?v=q6q73NTqH-o", Genre: "Comedy", Strarring: "Jake Johnson - Nina Dobrev", BoxOffice: "$189 million", Duration: "1h 51m", Rating: 23, YearReleased: 2014, story: "Two best friends, Ryan and Justin, attend their college reunion dressed up as cops. However, trouble ensues when they are presumed to be actual police officers and are made to fight gangsters."},
+//      {movie: "The hangover", url: "/theHangover.jpg", trailer: "https://www.youtube.com/watch?v=tcdUhdOlz9M", Genre: "Comedy", Strarring: "Bradley Cooper - Zack Galafanakis", BoxOffice: "$140 million", Duration: "1h 40m", Rating: 79, YearReleased: 2009, story: "Doug and his three best men go to Las Vegas to celebrate his bachelor party. However, the three best men wake up the next day with a hangover and realise that Doug is missing."},
+//      {movie: "I love you, man", url: "/iLoveYouMan.jpg", trailer: "https://www.youtube.com/watch?v=TJU061IOMMU", Genre: "Comedy", Strarring: "Paul Rudd - Jason Segal", BoxOffice: "$255 million", Duration: "1h 42m", Rating: 83, YearReleased: 2009, story: "Peter sets out to find out the perfect best man for his wedding. Things, however, take a drastic turn when his fiancee gets upset about his and his newly found best man's bond."},
+//      {movie: "Due date", url: "/dueDate.jpg ", trailer: "https://www.youtube.com/watch?v=1p3NnJ_oiE0", Genre: "Comedy", Strarring: "Zack Galafanakis - Robert Downey Jr", BoxOffice: "$180 million", Duration: "1h 52m", Rating: 55, YearReleased: 2010, story: "Peter Highman must reach Los Angeles to make it in time for his child's birth. However, he is forced to travel with Ethan, an aspiring actor, who frequently lands him in trouble."},
+//      {movie: "Bad trip", url: "/badTrip.jpg", trailer: "https://www.youtube.com/watch?v=UjT9I6eb4p8", Genre: "Comedy", Strarring: "Eric Andre - Tiffany Hadish", BoxOffice: "$221 million", Duration: "1h 47m", Rating: 76, YearReleased: 2021, story: "Hidden cameras capture two best friends pulling hilarious and inventive pranks on an unsuspecting public during a wild road trip."},
+//      {movie: "Persuasion", url: "/persuasionMovie.jpg", trailer: "https://www.youtube.com/watch?v=Fz7HmgPJQak", Genre: "Drama", Strarring: "Cosmo Jarvis - Dakota Johnson", BoxOffice: "$87 million", Duration: "2h 7m", Rating: 88, YearReleased: 2022, story: "When Frederick Wentworth -- the one who got away -- crashes back into Anne Elliot's life, she must choose between putting the past behind her or listening to her heart when it comes to second chances."},
+//      {movie: "The Unforgivable", url: "/theUnforgiv.jpg", trailer: "https://www.youtube.com/watch?v=JNUjx7LZoiU", Genre: "Drama", Strarring: "Sandra Bullock - John Bernthal", BoxOffice: "$110 million", Duration: "1h 32m", Rating: 66, YearReleased: 2021, story: "Ruth Slater, a woman released from prison after serving a sentence for a violent crime and attempts to re-enter society. She must try to put her life back together again in a world that refuses to forgive her past."},
+//      {movie: "The Mauritanian", url: "/theMaurit.jpg", trailer: "https://www.youtube.com/watch?v=sRSGg54yvjQ", Genre: "Drama", Strarring: "Jodie Foster - Tahar Rahim", BoxOffice: "$79 million", Duration: "2h 2m", Rating: 55, YearReleased: 2021, story: "A defence attorney, her associate, and a military prosecutor uncover a far-reaching conspiracy while investigating the case of a suspected 9/11 terrorist imprisoned at Guantanamo Bay, Cuba, for six years."},
+//      {movie: "Through My Window", url: "/throughMyWi.png", trailer: "https://www.youtube.com/watch?v=_zxhK3Z-R0c", Genre: "Drama", Strarring: "Julio Pena - Clara Galle", BoxOffice: "$133 million", Duration: "1h 46m", Rating: 76, YearReleased: 2022, story: "Raquel has a longtime crush on her hot neighbour, Ares, whom she secretly watches but has never spoken to. Can she make Ares fall in love with her?"},
+//      {movie: "Little Women", url: "/littleWomen.jpg", trailer: "https://www.youtube.com/watch?v=AST2-4db4ic", Genre: "Drama", Strarring: "Saoirse Ronan - Florence Pugh", BoxOffice: "$122 million", Duration: "1h 50m", Rating: 81, YearReleased: 2019, story: "While the March sisters enter the threshold of womanhood, they go through many ups and downs in life and endeavour to make important decisions that can affect their future."},
+//      {movie: "Interceptor", url: "/Interceptor.jpg", trailer: "https://www.youtube.com/watch?v=OQSoII4Bj1o", Genre: "Action", Strarring: "Elsa Bataky - Luke Bracey", BoxOffice: "$115 million", Duration: "1h 44m", Rating: 72, YearReleased: 2022, story: "One Army captain is forced use her years of tactical training and military expertise when a simultaneous coordinated attack threatens the remote missile interceptor station of which she is in command."},
+//      {movie: "The Tomorrow War", url: "/theTomorow.jpg", trailer: "https://www.youtube.com/watch?v=QPistcpGB8o", Genre: "Action", Strarring: "Chris Pratt - Betty Gilbin", BoxOffice: "$280 million", Duration: "1h 34m", Rating: 67, YearReleased: 2021, story: "When a group of time travellers from the future tell people about a war they are fighting with aliens, Dan, a school teacher, decides to help them win it in order to secure his daughter's future."},
+//      {movie: "A Day to Die", url: "/aDayToDie.jpg", trailer: "https://www.youtube.com/watch?v=JnFQv6hnUuU", Genre: "Action", Strarring: "Kevin Dellon - Bruce Willis", BoxOffice: "$193 million", Duration: "1h 55m", Rating: 92, YearReleased: 2022, story: "After killing a drug syndicate member while protecting a parolee, Connor Connolly has one day to pay two million dollars in reparations he doesn't have to Tyrone Pettis. He is forced to ask his old military ops crew, led by Brice Mason, to come together and somehow get two million dollars before Connor loses everyone he loves."},
+//      {movie: "Wrath of Man", url: "/wrathOfMan.jpg", trailer: "https://www.youtube.com/watch?v=EFYEni2gsK0", Genre: "Action", Strarring: "Jason Tatum - Scott Eastwood", BoxOffice: "$55 million", Duration: "1h 32m", Rating: 32, YearReleased: 2021, story: "H is a mysterious man who starts working for a cash moving truck company. He becomes known for using amazing precision and dexterity to neutralise robbers. However, H is actually out for revenge."},
+//      {movie: "The Contractor", url: "/theContract.jpg", trailer: "https://www.youtube.com/watch?v=e7glvM8Xh0w", Genre: "Action", Strarring: "Chris Pine - Ben Foster", BoxOffice: "$115million", Duration: "2h 19m", Rating: 22, YearReleased: 2022, story: "Involuntarily discharged from the Army, a special forces sergeant lands a contract with a private underground military force. When his very first assignment goes awry, the elite soldier finds himself hunted and on the run, caught in a dangerous conspiracy and fighting to stay alive long enough to get home and uncover the true motives of those who betrayed him."},
+//      {movie: "The Age of Adaline", url: "/theAgeOf.jpg", trailer: "https://www.youtube.com/watch?v=7UzSekc0LoQ", Genre: "Romance", Strarring: "Blake Lively - Harrison Ford", BoxOffice: "$88 million", Duration: "1h 46m", Rating: 73, YearReleased: 2015, story: "Adaline, who has been 29 for eight decades, meets and madly falls in love with Ellis. She is forced to make a life-altering decision after a meeting with his parents threatens to expose her secret."},
+//      {movie: "The Shape Of Water", url: "/theShpe.jpg", trailer: "https://www.youtube.com/watch?v=XFYWazblaUA", Genre: "Romance", Strarring: "Sally Hawkins - Doug Jones", BoxOffice: "$125 million", Duration: "1h 48m", Rating: 51, YearReleased: 2017, story: "Elisa, a lonely janitor, stumbles upon an amphibious creature that is held captive in a secret research facility. She then develops a unique relationship with the creature."},
+//      {movie: "The Bodyguard", url: "/theBodyguard.jpg", trailer: "https://www.youtube.com/watch?v=4JFRdJTszRM", Genre: "Romance", Strarring: "Kevin Costner - whitney Houston", BoxOffice: "$133 million", Duration: "2h 12m", Rating: 43, YearReleased: 1992, story: "Rachel, a singer and an actor, receives death threats from an obsessive stalker. However, things turn chaotic when she hires Frank, an ex-Secret Service agent, to be her bodyguard and falls for him."},
+//      {movie: "Never Let Me Go", url: "/neverLetMe.jpg", trailer: "https://www.youtube.com/watch?v=sXiRZhDEo8A", Genre: "Romance", Strarring: "Andrew Garfield - Kiera Knightley", BoxOffice: "$67 million", Duration: "1h 35m", Rating: 62, YearReleased: 2010, story: "Kathy, Tommy and Ruth are raised in an idyllic environment at Hailsham, a boarding school. Even as they deal with pangs of love, a teacher lets it slip that their fate has already been written."},
+//      {movie: "Focus", url: "/Focus.jpg", trailer: "https://www.youtube.com/watch?v=MxCRgtdAuBo", Genre: "Romance", Strarring: "Will Smith - Margot Robbie", BoxOffice: "$310 million", Duration: "1h 51m", Rating: 54, YearReleased: 2015, story: "Nicky, an accomplished con artist, gets romantically involved with his disciple, Jess, but, soon, ends their relationship. Years later, she returns as a femme fatale to spoil his plans."},
+//      {movie: "Scream", url: "/Scream.jpg", trailer: "https://www.youtube.com/watch?v=beToTslH17s", Genre: "Horror", Strarring: "Melissa Barrera - Mason Gooding", BoxOffice: "$73 million", Duration: "2h 3m", Rating: 44, YearReleased: 2022, story: "Twenty-five years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past."},
+//      {movie: "No One Gets Out Alive", url: "/noOne.png", trailer: "https://www.youtube.com/watch?v=sY2TLiK27g4", Genre: "Horror", Strarring: "Cristina Rodlo - Marc Menchaca", BoxOffice: "$70 million", Duration: "1h 55m", Rating: 72, YearReleased: 2021, story: "Desperate and without documentation, a woman from Mexico moves into a rundown Cleveland boarding house. Then the unsettling cries and eerie visions begin."},
+//      {movie: "Umma", url: "/Umma.jpg", trailer: "https://www.youtube.com/watch?v=QQdXvvtu-iI", Genre: "Horror", Strarring: "Sandra Oh - Fivel Stewart", BoxOffice: "$120 million", Duration: "1h 32m", Rating: 56, YearReleased: 2022, story: "A woman's quiet life on an American farm takes a terrifying turn when the remains of her estranged mother arrive from Korea."},
+//      {movie: "The Nun", url: "/theNun.jpg", trailer: "https://www.youtube.com/watch?v=pzD9zGcUNrw", Genre: "Horror", Strarring: "Taisa Farmiga - Bonnie Arons", BoxOffice: "$137 million", Duration: "1h 47m", Rating: 66, YearReleased: 2018, story: "A priest and a novice arrive in Romania to investigate the death of a young nun. However, things take an ugly turn after they encounter a supernatural force."},
+//      {movie: "The Grudge", url: "/theGrudge.jpg", trailer: "https://www.youtube.com/watch?v=O2NKzO-fxwQ", Genre: "Horror", Strarring: "Sara Michelle - Jason Behr", BoxOffice: "$190 million", Duration: "1h 52m", Rating: 43, YearReleased: 2004, story: "Karen Davis moves to Tokyo, where she encounters a supernatural spirit that possesses its victims. After a series of horrifying and mysterious deaths, Karen makes a vow to stop any further deaths."}]
 
-const type = [{type: "Recently added", id: "Recently-added"}, {type: "Popular now", id: "Popular-now"}, {type: "Comedy", id: "Comedy"}, {type: "Drama", id: "Drama"},{type: "Action", id: "Action"},{type: "Romance", id: "Romance"},{type: "Horror", id: "Horror"}]
+// const type = [{type: "Recently added", id: "Recently-added"}, {type: "Popular now", id: "Popular-now"}, {type: "Comedy", id: "Comedy"}, {type: "Drama", id: "Drama"},{type: "Action", id: "Action"},{type: "Romance", id: "Romance"},{type: "Horror", id: "Horror"}]
 
 const body = $("body")
 
@@ -129,6 +129,7 @@ signIn.on("click", function(){
     const signInButton = $('<button class=sing-in-btn>Login</button>')
     signInPage.append(signInButton)
 })
+// register button
 
 //FAQ
 const fqa = $(".fqa")
@@ -173,48 +174,145 @@ darkMode.on("click", function(){
 lightMode.on("click", function(){
     darkMode.css("visibility", "visible")
     lightMode.css("visibility", "hidden")
-    body.css("background-color", "#EBDCBF")
-    body.css("color", "rgb(129, 85, 85)")
+    body.css("background-color", "#d2d3db")
+    body.css("color", "black")
+    const house = $(".house")
+    house.css("background-color", "#e4e5f1")
+    const container = $(".container")
+    container.css("background-color", "#e4e5f1")
 })
 
 
 
-let j=0
-for(let i=0; i<7; i++){
+// let j=0
+// for(let i=0; i<7; i++){
     
-    const big = $(`<div class="big"><h1 class="genre" id = ${type[i].id}>${type[i].type}</h1></div>`)
-body.append(big)
+//     const big = $(`<div class="big"><h1 class="genre" id = ${type[i].id}>${type[i].type}</h1></div>`)
+// body.append(big)
 
-const house = $('<div class="house"></div>')
-big.append(house)
+// const house = $('<div class="house"></div>')
+// big.append(house)
 
 // const addToWatchList = function(){
 //     console.log(this)
 // }
 
 
-for(let i=j; i<j+5; i++){
+// for(let i=j; i<j+5; i++){
 
-    let x = $(`<div class="movie"></div>`)
-    let y = $(`<div class="movie-image"></div>`)
-    y.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
-    let z = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
-    let butt = $(`<button class="watchlist-btn">Add to watch list</button>`)
-    house.append(x)
-    x.append(y)
-    x.append(z)
-    x.append(butt)
+//     let x = $(`<div class="movie"></div>`)
+//     let y = $(`<div class="movie-image"></div>`)
+//     y.css("background", `url(./images${movieArray[i].url}) no-repeat center center/ contain`)
+//     let z = $(`<h2 class="movie-name ">${movieArray[i].movie}</h2>`)
+//     let butt = $(`<button class="watchlist-btn">Add to watch list</button>`)
+//     house.append(x)
+//     x.append(y)
+//     x.append(z)
+//     x.append(butt)
+let movie = []
 
-    butt.on("click", function(){
+for(let h=1; h<10; h++){
+    $.ajax({
+
+        url: `https://api.themoviedb.org/3/movie/popular?api_key=48ebb515fbbd23c0c72c426f96ec567f&language=en-US&page=${h}`,
+        // 48ebb515fbbd23c0c72c426f96ec567f
+      
+        
+        success: function (data) {
+          let y = data.results
+        //   console.log(y.length);
+          for(let i=0; i<y.length; i++){
+              let newObj={}
+              newObj.name = y[i].title
+              newObj.poster = y[i].poster_path
+              newObj.ReleasedDate = y[i].release_date
+              newObj.overview = y[i].overview
+              newObj.rate = y[i].vote_average * 10
+            //   y[i].genre_ids
+      
+              let movieGenre = ""
+      
+              for(let j=0; j<y[i].genre_ids.length; j++){
+      
+                  if(y[i].genre_ids[j] === 28){
+                      movieGenre+= "Action"
+                  } if(y[i].genre_ids[j] === 12){
+                      movieGenre = movieGenre + "-" + "Adventure"
+                  } if(y[i].genre_ids[j] === 16){
+                      movieGenre = movieGenre + "-" + "Animation"
+                  } if(y[i].genre_ids[j] === 35){
+                      movieGenre = movieGenre + "-" + "Comedy"
+                  } if(y[i].genre_ids[j] === 80){
+                      movieGenre = movieGenre + "-" + "Crime"
+                  } if(y[i].genre_ids[j] === 99){
+                      movieGenre = movieGenre + "-" + "Documentary"
+                  } if(y[i].genre_ids[j] === 18){
+                      movieGenre = movieGenre + "-" + "Drama"
+                  } if(y[i].genre_ids[j] === 10751){
+                      movieGenre = movieGenre + "-" + "Family"
+                  } if(y[i].genre_ids[j] === 14){
+                      movieGenre = movieGenre + "-" + "Fantasy"
+                  } if(y[i].genre_ids[j] === 36){
+                      movieGenre = movieGenre + "-" + "History"
+                  } if(y[i].genre_ids[j] === 27){
+                      movieGenre = movieGenre + "-" + "Horror"
+                  } if(y[i].genre_ids[j] === 10402){
+                      movieGenre = movieGenre + "-" + "Music"
+                  } if(y[i].genre_ids[j] === 9648){
+                      movieGenre = movieGenre + "-" + "Mystery"
+                  } if(y[i].genre_ids[j] === 10749){
+                      movieGenre = movieGenre + "-" + "Romance"
+                  } if(y[i].genre_ids[j] === 878){
+                      movieGenre = movieGenre + "-" + "Science Fiction"
+                  } if(y[i].genre_ids[j] === 10770){
+                      movieGenre = movieGenre + "-" + "TV Movie"
+                  } if(y[i].genre_ids[j] === 53){
+                      movieGenre = movieGenre + "-" + "Thriller"
+                  } if(y[i].genre_ids[j] === 10752){
+                      movieGenre = movieGenre + "-" + "War"
+                  } if(y[i].genre_ids[j] === 37){
+                      movieGenre = movieGenre + "-" + "Western"
+                  }
+                  newObj.genre = movieGenre
+      
+              }
+              
+              movie.push(newObj)              
+      
+          }
+      
+        },
+      });
+
+}
+// console.log(movie)
+// console.log(movie.length)
+// const x = movie
+// console.log(x)
+// console.log(x.length)
+
+const newL = function(){
+    if(movie.length !== 0){
+        const movieDiv = $('<div class="movie-div"></div>')
+        body.append(movieDiv)
+        for(let i=0; i<movie.length; i++){
+    console.log(movie[i].poster);
+    
+    const movieCard = $(`<div class = movie-card><p class="movie-card-name"><b>${movie[i].name}</b></p><img class="movie-card-image" src="https://image.tmdb.org/t/p/w500${movie[i].poster}"/><button class="movie-card-button">Add to watchlist</button></div>`)
+    const movieCardName = $(".movie-card-name")
+    const movieCardImage = $(".movie-card-image")
+    const movieCardButton = $(".movie-card-button")
+    movieDiv.append(movieCard)
+    movieCardButton.on("click", function(){
         let newObj = {}
         let sibling = $(this).siblings()
         let btnawi = $(this)
         
-        for(let i=0; i<movieArray.length; i++){
+        for(let i=0; i<movie.length; i++){
             
-            if(sibling.text() === movieArray[i].movie){
-                newObj.movie = movieArray[i].movie
-                newObj.url = movieArray[i].url
+            if(sibling.text() === movie[i].movie){
+                newObj.movie = movie[i].name
+                newObj.url = movie[i].url
                 watchListArray.push(newObj)
                 const jsonOb = JSON.stringify(watchListArray)
                 localStorage.setItem("movies", jsonOb)
@@ -242,11 +340,15 @@ for(let i=j; i<j+5; i++){
         })
 
     })
-    
-}
-j+=5
 
 }
+
+    }
+}
+
+
+
+    
 
 const movieImgDiv = $(".movie-image")
 movieImgDiv.on("click", function(){
