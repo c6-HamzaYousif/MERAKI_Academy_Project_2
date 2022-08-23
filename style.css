@@ -159,7 +159,7 @@ body{
 
 .houseee{
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(3, 33%);
     width: 100%;
     
 }
@@ -169,6 +169,10 @@ body{
     margin-bottom: 20px;
     text-align: center;
     font-size: 35px;
+    border-bottom: 1px solid white;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 .unknow-two{
@@ -431,22 +435,32 @@ a{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5,20%);
-    gap: 3px;
+    gap: 50px 3px;
+    margin-left: 10px;
+    margin-top: 100px;
+    /* color: rgb(116, 116, 187); */
+    
 }
 .movie-card{
     display: flex;
     flex-direction: column;
     height: 350px;
-    width: 90%;
+    width: 88%;
+    background-color: #3b2233;
+    border-radius: 10px;
+
 }
 .movie-card-image{
     height: 220px;
     width: 100%;
+    cursor: pointer;
 }
 .movie-card-name{
     text-align: center;
     font-size: 20px;
     height: 50px;
+    padding: 5px;
+    margin-top: auto;
 }
 .movie-card-button{
     padding: 2px;
@@ -457,4 +471,31 @@ a{
 }
 .movie-card-button:hover{
     background-color: rgb(88, 37, 84);
+}
+.categories{
+    height: 10px;
+    width: 100%;
+    /* border: 1px solid white; */
+    margin-top: 80px;
+}
+.category-btn{
+    padding: 3px;
+    font-size: 17px;
+    margin: 0 4px 0 10px;
+    width: 120px;
+    height: 30px;
+    border-radius: 15px;
+    color: white;
+    background-color: #3b2233;
+}
+.category-btn:hover{
+    background-color: rgb(88, 37, 84);
+}
+.ya-rab{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+    gap: 50px 3px;
+    margin-left: 10px;
+    margin-top: 100px;
 }
