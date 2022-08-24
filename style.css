@@ -5,16 +5,16 @@
 
 body{
 
-    color: white;
-    background-color: #180413;
+    color: black;
+    background-color: #e4e5f1;
  
 }
 .container{
     display: flex;
     height: 40px;
-    border: 2px solid rgb(68, 38, 55);
+    border: 2px solid #d2d3db;
     align-items: center;
-    background-color: rgb(68, 38, 55);
+    background-color: #d2d3db;
     position: fixed;
   top: 0;
   width: 100%;
@@ -49,14 +49,6 @@ body{
 
 }
 
-.house{
-    width: 100%;
-    height: 300px;
-    /* border: 2px solid black; */
-    display: flex;
-    justify-content: space-around;
-    background-color: #3b2233;
-}
 
 .movie{
     width: 20%;
@@ -64,7 +56,6 @@ body{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    /* background-color: whitesmoke; */
 
 }
 
@@ -81,7 +72,7 @@ body{
 }
 
 .watchlist-btn:active{
-    background-color: rgb(30, 173, 173);
+    /* background-color: rgb(30, 173, 173); */
 }
 
 .genre{
@@ -100,17 +91,17 @@ body{
     cursor: pointer;
 }
 .f{
-    color: rgb(229, 232, 238);
+    color: rgb(124, 51, 106);
 
 }
 
 .a{
-    color: rgb(176, 192, 216);
+    color: rgb(221, 19, 171);
 
 }
 
 .q{
-    color: rgb(138, 170, 199);
+    color: rgb(105, 2, 83);
 
 }
 
@@ -128,11 +119,11 @@ body{
     width: 40px;
     height: 40px;
     margin-top: 20px;
-    color: white;
+    color: black;
 }
 .youtube{
     margin-left: 50px;
-    color: white;
+    color: black;
     width: 50px;
     height: 50px;
     margin-top: 17px;
@@ -149,12 +140,10 @@ body{
 
 .svg:hover{
     color: rgb(72, 72, 221);
-    /* color: black; */
 }
 
 .youtube:hover{
     color: red;
-    /* color: black; */
 }
 
 .houseee{
@@ -176,7 +165,7 @@ body{
 }
 
 .unknow-two{
-    color: bisque;
+    color: black;
 
 }
 
@@ -187,7 +176,6 @@ body{
 .wtclist{
     display: flex;
     flex-direction: column;
-    /* background-color: white; */
     width: 60%;
     margin-left: 80px;
     /* margin-top: 30px; */
@@ -211,11 +199,11 @@ body{
     margin-bottom: 15px;
     border-radius: 8px;
     font-size: 17px;
-    background-color: #180413;
-    color: white;
+    background-color: #e4ebf1;
+    color: black;
 }
 .remove:hover{
-    background-color: rgb(88, 37, 84);
+    background-color: rgb(156, 171, 199);
 }
 
 
@@ -288,9 +276,9 @@ a{
     margin-top: 100px; 
     width: 300px;
     height: 400px;
-    background-color: #3b2233;
+    background-color: #9394a5;
     border: 1px solid black;
-    color: white;
+    color: rgba(32, 31, 34, 0.993);
     
 }
 .sign-in-input{
@@ -314,7 +302,6 @@ a{
     align-self: center;
     width: 80px;
     height: 80px;
-    /* color: blue; */
 
 }
 .sign-in-text{
@@ -328,13 +315,12 @@ a{
     height: 30px;
     margin-left: 52px;
     font-size: larger;
-    color: white;
+    color: rgba(32, 31, 34, 0.993);
     margin-bottom: -5px; 
-    background-color: #180413;
-    /* background-color: rgb(182, 220, 229); */
+    background-color: #d2d3db;
 }
 .sing-in-btn:hover{
-    background-color: rgb(88, 37, 84);
+    background-color: rgb(145, 176, 182);
 
 }
 
@@ -353,7 +339,7 @@ a{
      margin-bottom: 20px;
      text-align: center;
      font-size: 30px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
     
 
 }
@@ -420,16 +406,14 @@ a{
 .mode:hover{
     color: rgb(95, 80, 80);
 }
+
+
 .light{
-    /* visibility: hidden; */
-    
-}
-.darkk{
     visibility: hidden;
 }
 
 a{
-    color: white;
+    color: black;
 }
 .movie-div{
     width: 100%;
@@ -438,7 +422,6 @@ a{
     gap: 50px 3px;
     margin-left: 10px;
     margin-top: 100px;
-    /* color: rgb(116, 116, 187); */
     
 }
 .movie-card{
@@ -446,7 +429,7 @@ a{
     flex-direction: column;
     height: 350px;
     width: 88%;
-    background-color: #3b2233;
+    background-color: #9394a5;
     border-radius: 10px;
 
 }
@@ -464,13 +447,15 @@ a{
 }
 .movie-card-button{
     padding: 2px;
-    background-color: #180413;
-    color: white;
+    background-color: #a0c2cc;
+    color: black;
     margin: auto;
     height: 30px;
+    padding: 4px;
+    border-radius: 10px;
 }
 .movie-card-button:hover{
-    background-color: rgb(88, 37, 84);
+    background-color: rgb(121, 112, 120);
 }
 .categories{
     height: 10px;
@@ -485,11 +470,11 @@ a{
     width: 120px;
     height: 30px;
     border-radius: 15px;
-    color: white;
-    background-color: #3b2233;
+    color: black;
+    background-color: #9394a5;
 }
 .category-btn:hover{
-    background-color: rgb(88, 37, 84);
+    background-color: rgb(121, 112, 120);
 }
 .ya-rab{
     width: 100%;
@@ -497,5 +482,6 @@ a{
     grid-template-columns: repeat(5,20%);
     gap: 50px 3px;
     margin-left: 10px;
-    margin-top: 100px;
+    /* margin-top: 10px; */
 }
+
